@@ -5,6 +5,7 @@
   "main": "dist/icems.js",
   "scripts": {
     "start": "webpack-cli --watch --mode development",
+    "test": "node examples/sendSMS.js",
     "build": "webpack --mode production"
   },
   "keywords": [],
