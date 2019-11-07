@@ -4,25 +4,26 @@
   "description": "",
   "main": "dist/icems.js",
   "scripts": {
+    "install": "npm run build",
+    "build": "webpack --mode production",
     "start": "webpack-cli --watch --mode development",
-    "test": "node examples/sendSMS.js",
-    "build": "webpack --mode production"
+    "test": "node examples/sendSMS.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
-    "babel-loader": "^8.0.6",
     "dotenv": "^8.2.0",
-    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   },
   "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
     "@babel/runtime": "^7.7.2",
+    "babel-loader": "^8.0.6",
     "node-fetch": "^2.6.0",
-    "utf8": "^3.0.0"
+    "utf8": "^3.0.0",
+    "webpack": "^4.41.2"
   }
 }
