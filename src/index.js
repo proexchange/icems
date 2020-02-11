@@ -9,7 +9,7 @@ export default class ICEMS {
     this.source = source
   }
 
-  async sendSMS(destination, message) {
+  async sendSMS(destination, message, customParams = {}) {
     var url = new URL(this.endpoint)
     url.pathname = "/sms";
     url.searchParams.set("authid", this.username)
@@ -17,6 +17,10 @@ export default class ICEMS {
     url.searchParams.set("destination", destination)
     url.searchParams.set("source", this.source)
     url.searchParams.set("message", utf8.encode(message))
+    
+    Object.keys(customParams).forEach(key => {
+      url.searchParams.set(key, customParams[key]);
+    });
 
     return await fetch(url.toString())
       .then(response => {
